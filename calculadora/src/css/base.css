@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+body {
+    font-weight: 400;
+    height: 100vh;
+    color: #333;
+    background-image: linear-gradient(to top left, #753682 0%, #bf2e34 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@font-face {
+    font-family: "RobotoMono";
+    src: url('../fonts/Roboto-Thin.ttf');
+}
+
+.carcaca {  
+    align-items: center;
+    border: 3px solid rgb(53, 53, 53);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 350px;
+    margin: 0;
+    width: 235px;
+}
+
+.carcaca h1 {
+    margin: 0;
+}
+
+.btns {
+    flex: 1;
+}
+

@@ -1,0 +1,6 @@
+.btn {
+    flex: 1;
+    font-size: 22px;
+    outline: none;
+    min-width: 30px;
+}
