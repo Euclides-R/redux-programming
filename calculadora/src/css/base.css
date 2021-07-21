@@ -39,7 +39,12 @@ body {
     margin: 0;
 }
 
-.btns {
+.btns-space {
+    align-items: center;
+    border: 1px solid red;
     flex: 1;
+    justify-content: space-between;
+    height: 200px;
+    width: 220px;
 }
 

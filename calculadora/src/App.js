@@ -6,29 +6,27 @@ import ScreenNumbers from './componentes/ScreenNumbers';
 
 export default function App() {
   return (
-    
     <div className="carcaca">
       <h1>Calculadora</h1>
-      <div className="btns">
-        <Button className="ac">AC</Button>
-        <div className="numbers">
-          <Button>1</Button>
-          <Button>2</Button>
-          <Button>3</Button>
-          <Button>4</Button>
-          <Button>5</Button>
-          <Button>6</Button>
-          <Button>7</Button>
-          <Button>8</Button>
-          <Button>9</Button>
-          <Button>0</Button>
+        <div className="btns-space">
+          <Button className="btn-ac" label="AC" />
+          <Button label="/" />
+          <Button label="7" />
+          <Button label="8" />
+          <Button label="9" />
+          <Button label="*" />
+          <Button label="4" />
+          <Button label="5" />
+          <Button label="6" />
+          <Button label="-" />
+          <Button label="1" />
+          <Button label="2" />
+          <Button label="3" />
+          <Button label="+" />
+          <Button label="0" />
+          <Button label="." />
+          <Button label="=" />
         </div>
-        <Button>/</Button>
-        <Button>*</Button>
-        <Button>=</Button>
-        <Button>+</Button>
-        <Button>-</Button>
-      </div>
     </div>     
   );
 }

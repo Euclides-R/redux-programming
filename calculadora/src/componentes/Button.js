@@ -1,6 +1,9 @@
 import React from 'react';
-import classnames from 'classnames';
 
-export default function Button({children}) {
-    return <button className={classnames(`btn `, className)}>{children}</button>;
-}
+export default function Button({ children, classNames, kind }) {
+    return (
+            <button className="btn btn-design">
+                {children}
+            </button>
+        );
+    }
