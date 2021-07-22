@@ -10,9 +10,17 @@
     outline: none;
 }
 
+.btn-ac {
+    width: 156px;
+}
+
 .btn-design {
     background:rgb(53, 53, 53);
     border-radius: 12px;
     height: 50px;
-    width: 50px;
+    min-width: 50px;
+}
+
+.btn-plus {
+    width: 103px;
 }
