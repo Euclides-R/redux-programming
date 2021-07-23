@@ -1,0 +1,15 @@
+.screen-design {
+    align-items: flex-end;
+    background: rgba(184, 184, 184, 0.733);
+    border: 1px solid rgb(65, 65, 65);
+    border-radius: 5px 5px 0px 0px;
+    color: black;
+    display: flex;
+    flex: 1;
+    font-size: 40px;
+    grid-column: span 4;
+    height: 100px;
+    justify-content: right;
+    padding-right: 4px;
+    text-align: right;
+}

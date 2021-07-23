@@ -26,8 +26,8 @@ body {
 
 .btns-space {
     align-items: center;
-    border: 1px solid red;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
     width: 220px;
 }
 
@@ -38,15 +38,11 @@ body {
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    height: 350px;
     margin: 0;
+    padding: 10px;
     width: 235px;
 }
 
 .carcaca h1 {
     margin: 0;
-}
-
-.display {
-    border: 1px solid green;
 }
