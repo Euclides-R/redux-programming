@@ -1,33 +1,14 @@
-import './css/index.css'
-import React from 'react';
+import React, { Component } from 'react';
+import './css/index.css';
 
-import { Button, Screen } from './componentes';
+import Calculator from './main/calculadora';
 
-export default function App() {
-  return (
-    <div className="carcaca">
-      <h1>Calculadora</h1>
-        <div className="btns-space">
-          <Screen>0</Screen>
-          <Button label="AC" triple /> 
-          <Button label="/" />
-          <Button label="7" />
-          <Button label="8" />
-          <Button label="9" />
-          <Button label="*" />
-          <Button label="4" />
-          <Button label="5" />
-          <Button label="6" />
-          <Button label="-" />
-          <Button label="1" />
-          <Button label="2" />
-          <Button label="3" />
-          <Button label="+" />
-          <Button label="0" double />
-          <Button label="." />
-          <Button label="=" />
-        </div>
-    </div>     
-  );
+class App extends Component {
+  render() {
+    return (
+      <Calculator />
+    );
+  }
 }
 
+export default App; 
