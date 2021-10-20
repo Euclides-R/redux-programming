@@ -4,8 +4,8 @@ import { IconEdit, IconTrash } from "./Icones";
 
 interface TabelaProps {
     clientes: Cliente[];
-    clientSelect?: (cliente: Cliente) => void
-    clientDelete?: (cliente: Cliente) => void
+    clientSelect: (cliente: Cliente) => void
+    clientDelete: (cliente: Cliente) => void
 }
 
 export default function Tabela(props: TabelaProps) {

@@ -5,7 +5,7 @@ import SignIn from "./SignIn";
 
 interface FormulationProps {
     cliente: Cliente
-    alterClient: (cliente: Cliente) => void
+    alterClient?: (cliente: Cliente) => void
     cancel?: () => void
 }
 

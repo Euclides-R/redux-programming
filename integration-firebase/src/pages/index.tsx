@@ -14,18 +14,22 @@ export default function Home() {
     new Cliente('João', 29, '4'),
   ]
 
-  function clientSelect(cliente) {
-    console.log(cliente.nome); 
+  function clientSelect(cliente: Cliente) {
+    console.log(client)
+    setClient(client);
+    setVisible('form');
   }
 
-  function clientDelete(cliente) {
-    console.log(cliente.nome);    
+  function clientDelete(cliente: Cliente) {
+    console.log(`Excluir... ${cliente.nome}`)  
   }
 
   function newClient(cliente: Cliente) {
-    console.log(cliente)
+    console.log(cliente);
+    setVisible('table');
   }
 
+  const [client, setClient] = useState<Cliente>(Cliente.vazio());
   const [visible, setVisible] = useState<'table' | 'form'>('table');
   
   return (
@@ -53,9 +57,10 @@ export default function Home() {
           </>
           ) : (
             <Form 
-              cliente={clientes[0]}
+              cliente={client}
               cancel={() => setVisible('table')}
-            />
+              alterClient={() => newClient}
+              />
           )}
         </Layout>
     </div>
