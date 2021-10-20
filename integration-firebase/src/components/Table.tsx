@@ -1,4 +1,5 @@
-import Cliente from "../core/Clinte";
+import Cliente from "../core/Cliente";
+import Btn from "./Btn";
 import { IconEdit, IconTrash } from "./Icones";
 
 interface TabelaProps {
@@ -40,19 +41,18 @@ export default function Tabela(props: TabelaProps) {
         return (
             <td className="flex justify-center">
                 {props.clientSelect ? (
-                <button 
+                <button
                     onClick={() => props.clientSelect?.(cliente)}
                     className={`
                         flex justify-center items-center
                         text-green-600 rounded-full p-2 m-1
                         hover:bg-purple-50
-                    `}
-                    >
-                    {IconEdit}
+                    `}>
+                        {IconEdit}
                 </button>) : false}
                 {props.clientDelete ? (
                 <button
-                    onClick={() => props.clientSelect?.(cliente)}
+                    onClick={() => props.clientDelete?.(cliente)}
                     className={`
                         flex justify-center items-center
                         text-red-600 rounded-full p-2 m-1
