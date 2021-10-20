@@ -1,10 +1,11 @@
 import { useState } from "react";
-import Cliente from '../core/Cliente'
+import Cliente from '../core/Cliente';
 import Btn from "./Btn";
 import SignIn from "./SignIn";
 
 interface FormulationProps {
     cliente: Cliente
+    alterClient: (cliente: Cliente) => void
     cancel?: () => void
 }
 
@@ -34,7 +35,11 @@ export default function Formulation(props: FormulationProps) {
                 valueAlter={setAge}
             />
             <div className="flex justify-end mt-7">
-                <Btn cor='blue' className="mr-2">
+                <Btn
+                    cor='blue'
+                    className="mr-2"
+                    onClick={() => props.alterClient?.(new Cliente(name, age, id))}
+                >
                     {id ? 'Alterar' : 'Salvar'}
                 </Btn>
                 <Btn cor='gray' onClick={props.cancel}>

@@ -22,6 +22,10 @@ export default function Home() {
     console.log(cliente.nome);    
   }
 
+  function newClient(cliente: Cliente) {
+    console.log(cliente)
+  }
+
   const [visible, setVisible] = useState<'table' | 'form'>('table');
   
   return (
