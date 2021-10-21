@@ -1,22 +1,31 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import ColecaoCliente from '../backend/db/ColecaoCliente';
 import Btn from '../components/Btn';
 import Form from '../components/Formulation';
 import Layout from '../components/Layout'
 import Tabela from '../components/Table'
 import Cliente from '../core/Cliente'
+import RepositoryClient from '../core/RepositoryClient';
 
 export default function Home() {
+  
+  const repo: RepositoryClient = new ColecaoCliente();
 
-  const clientes = [
-    new Cliente('Verônica', 23, '1'),
-    new Cliente('Euclides', 21, '2'),
-    new Cliente('Maria', 25, '3'),
-    new Cliente('João', 29, '4'),
-  ]
+  const [client, setClient] = useState<Cliente>(Cliente.vazio());
+  const [clients, setClients] = useState<Cliente[]>([])
+  const [visible, setVisible] = useState<'table' | 'form'>('table');
+
+  useEffect(allClients, [])
+
+  function allClients() {
+    repo.allClient().then(clients => {
+      setClients(clients);
+      setVisible('table');
+    })
+  }
 
   function clientSelect(cliente: Cliente) {
-    console.log(client)
-    setClient(client);
+    setClient(cliente);
     setVisible('form');
   }
 
@@ -24,13 +33,11 @@ export default function Home() {
     console.log(`Excluir... ${cliente.nome}`)  
   }
 
-  function newClient(cliente: Cliente) {
-    console.log(cliente);
-    setVisible('table');
+  async function newClient() {
+    await repo.save(client)
+    allClients()
   }
 
-  const [client, setClient] = useState<Cliente>(Cliente.vazio());
-  const [visible, setVisible] = useState<'table' | 'form'>('table');
   
   return (
     <div className={`
@@ -44,13 +51,13 @@ export default function Home() {
             <div className="flex justify-end">
               <Btn
                 cor='green'
-                onClick={() => setVisible('form')}
+                onClick={newClient}
                 className="mb-4">
                   Novo Cliente
               </Btn>
             </div>
             <Tabela
-              clientes={clientes}
+              clientes={clients}
               clientSelect={clientSelect}
               clientDelete={clientDelete}
             />
